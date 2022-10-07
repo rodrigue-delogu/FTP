@@ -16,7 +16,7 @@ sed -i "164,203s/.//" /etc/proftpd/proftpd.conf
 sed -i "172s/.*/AnonRequirePassword off/" /etc/proftpd/proftpd.conf
 
 #Modification du fichier proftpd.conf
-sed -i "11s/.*/UserIPv6 off/" /etc/proftpd/proftpd.conf
+sed -i "11s/.*/UseIPv6 off/" /etc/proftpd/proftpd.conf
 sed -i "39s/.*/DefaultRoot ~/" /etc/proftpd/proftpd.conf
 sed -i "143s/.//" /etc/proftpd/proftpd.conf
 
