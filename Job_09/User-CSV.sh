@@ -1,7 +1,10 @@
 #!/bin/bash
 
 #Commande nécessaire à l'installation 
-apt install sudo adduser
+apt install sudo adduser sl
+
+#Création du groupe ftpgroup
+sudo groupadd ftpgroup
 
 sudo echo "/bin/false" >> /etc/shells
 
@@ -30,4 +33,7 @@ fi
 done < <(cut -d "," -f2,3,4,5 Shell_Userlist.csv | tail -n +2 )
 
 #Autorisation de ftpgroup et sudo
-echo -i "<Limit ALL>\n DenyGroup !ftpgroup\n DenyGroup !sudo</Limit>\n" | sudo tee -a /etc/proftpd/proftpd.conf
+echo -e "<Limit ALL>\n AllowGroup ftpgroup\n AllowGroup sudo\n DenyAll\n</Limit>\n" | sudo tee -a /etc/proftpd/proftpd.conf
+
+#Tchou Tchou
+sl
